@@ -1,0 +1,9 @@
+package main
+
+import "fmt"
+
+func main() {
+	var a, b, x, y int
+	fmt.Scan(&a, &b)
+
+}
