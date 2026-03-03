@@ -3,33 +3,16 @@ package main
 import "fmt"
 
 func main() {
-	var a, b, x, y, j int
+	var a, b, x, y int
 	fmt.Scan(&a, &b)
-	switch {
-	case 0 < a && a < 10:
-		{
-			j = 1
-		}
-	case 10 < a && a < 100:
-		{
-			j = 100
-		}
-	case 100 < a && a < 1000:
-		{
-			j = 1000
-		}
-	case a == 10000:
-		{
-			j = 10000
-		}
-	}
+	j := 10000
 	for a > 0 {
 		x = a / j
 		a = a % j
 		y = b
-		for b > 0 && a > 0 {
-			if x == b%10 {
-				fmt.Print(x, ' ')
+		for y > 0 && x > 0 {
+			if x == y%10 {
+				fmt.Print(x, " ")
 			}
 			y = y / 10
 		}
