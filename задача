@@ -3,34 +3,14 @@ import "fmt"
 func main() {
 	var a, b, x, y int
 	fmt.Scan(&a, &b)
-	var j int
-	if a > 0 && a < 10 {
-		j = 1
+	var j int = 1
+	for j <= a/10 {
+		j = j * 10
 	}
-	if a > 9 && a < 100 {
-		j = 10
-	}
-	if a > 99 && a < 1000 {
-		j = 100
-	}
-	if a > 999 && a < 10000 {
-		j = 1000
-	}
-	if a == 10000 {
-		j = 10000
-	}
-
 	for {
 		x = a / j
 		a = a % j
 		y = b
-		for y > 0 {
-			if x == y%10 {
-				fmt.Print(x, " ")
-			}
-			y = y / 10
-		}
-		j = j / 10
 		if a == 0 {
 			for y > 0 {
 				if y%10 == 0 {
@@ -39,6 +19,18 @@ func main() {
 				}
 				y = y / 10
 			}
+			break
+		}
+		for y > 0 {
+			if x == y%10 {
+				fmt.Print(x, " ")
+			}
+			y = y / 10
+		}
+		j = j / 10
+
+	}
+}
 			break
 		}
 	}
